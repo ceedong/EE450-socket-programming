@@ -7,7 +7,7 @@ The assignment requires to implement a simple model of computational offloading 
 2) Edge Server: Communicate with the client, receive the job, dispatch the job to back-end servers, receive their response, build the final output and send the result back to the client;<br>
 3) Backend Server: They perform specific computations they are assigned to. In our case, one of the servers performs bitwise "and" and the other performs bitwise "or" operations.<br>
 Three servers together constitute "Google Compute Engine" (1 Edge Server and 2 Back End Server). The client and the Edge Server communicates over a TCP connection while the communication between the Edge Server and the Back End Server is connectless and over UDP. This is illustrated in figure below:<br>
-
+![alt text](/figure.png)
 
 ## Original Readme.md File (For Grading Purpose)
 Implementation: The client.c reads a line from the text file, then transfers it to the edge server over UDP. The edge server then works as a client and transfers the message to Back-End server for further processing. Also the edge server needs to figure out what kind of calculation is the message asking for, OR or AND, to send the message to the corresponding Back-End server over TCP. At back-end server, it converts ASCII message to binary strings and calculate the results, then converts the result again as ASCII and returns it back to the edge server. Finally the edge server will transfer the result message to client over UDP and all messages should be on screen correctly. 
